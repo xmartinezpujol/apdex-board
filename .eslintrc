@@ -6,6 +6,6 @@
         "sourceType": "module",
     },
     "rules": {
-      "eslint linebreak-style": 0
+      "no-underscore-dangle": 0
     }
 }

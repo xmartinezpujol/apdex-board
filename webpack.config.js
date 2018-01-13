@@ -1,4 +1,4 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,16 +13,20 @@ module.exports = {
         exclude: /node_modules/,
         use: [{
           loader: 'babel-loader',
-          options: { presets: ['es2015'] }
-        }]
+          options: { presets: ['es2015'] },
+        }],
       },
-    ]
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   devServer: {
-      host: 'localhost',
-      port: 3000,
-      contentBase: './dist',
-      open: true,
-      openPage: '',
-    },
+    host: 'localhost',
+    port: 5000,
+    contentBase: './dist',
+    open: true,
+    openPage: '',
+  },
 };

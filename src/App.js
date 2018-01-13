@@ -1,7 +1,9 @@
 import dataAPI from './data/host-app-data.json';
 
 import Component from './components/Component';
-import AppItem from './components/AppItem';
+import Host from './components/Host/Host';
+
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -9,11 +11,27 @@ class App extends Component {
     this.state = {
       data: dataAPI,
       hosts: [],
-    }
+    };
   }
 
-  init(host) {
-    return this.getTopAppsByHost(host).map(item => (new AppItem(item)));
+  init() {
+    this.getHostsList();
+    return this.state.hosts.map(host => (new Host({ host, apps: this.getTopAppsByHost(host) })));
+  }
+
+  getHostsList() {
+    const hostsList = [];
+    this.state.data.forEach((app) => {
+      app.host.forEach((host) => {
+        if (hostsList === [] || !hostsList.includes(host)) {
+          hostsList.push(host);
+        }
+      });
+    });
+
+    this.state.hosts = hostsList;
+
+    return hostsList;
   }
 
   getTopAppsByHost(hostname) {
@@ -23,27 +41,14 @@ class App extends Component {
       .slice(0, 25);
   }
 
-  getHostsList() {
-    const hostsList = [];
-    this.state.data.map((app) => {
-      app.host.map(host => {
-        if(hostsList === [] || !hostsList.includes(host)) {
-          hostsList.push(host);
-        }
-      })
-    });
-
-    this.state.hosts = hostsList;
-
-    return hostsList;
-  }
-
   render() {
-   return `
-    <h1>Apps by Host</h1>
-    <div>
-      ${this.getHostsList().map(host => this.init(host).map(child => child.render()).join('')).join('')}
-    </div>
+    return `
+      <div class="app-container">
+        <h1>Apps by Host</h1>
+        <div class="app-host-list">
+          ${this.init().map(child => child.render()).join('')}
+        </div>
+      </div>
    `;
   }
 }

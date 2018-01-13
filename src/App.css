@@ -1,0 +1,14 @@
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.app-container h1 {
+    margin-left: 15px;
+}
+
+.app-host-list {
+    display: flex;
+    flex-flow: row wrap;
+}
