@@ -1,0 +1,11 @@
+{
+    "parser": "babel-eslint",
+    "extends": "airbnb-base",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+    },
+    "rules": {
+      "eslint linebreak-style": 0
+    }
+}

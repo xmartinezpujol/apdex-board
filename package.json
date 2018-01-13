@@ -1,0 +1,35 @@
+{
+  "name": "apdex-board",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack -p",
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xmartinezpujol/apdex-board.git"
+  },
+  "author": "Xavier Martínez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xmartinezpujol/apdex-board/issues"
+  },
+  "homepage": "https://github.com/xmartinezpujol/apdex-board#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.0.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "jest": "^22.0.0",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1"
+  }
+}
