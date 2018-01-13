@@ -10,5 +10,14 @@
 
 .app-host-list {
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.app-host-list.column {
+    flex-direction: column;
+}
+
+.app-host-list.grid {
+    flex-direction: row;
 }

@@ -14,25 +14,18 @@ class AppItem extends Component {
     this.handleAlert = this.handleAlert.bind(this);
   }
 
-  handleAlert(num) {
-    alert(`Release number: ${num}`);
-  }
-
-  update(newState) {
-    this.state.name = newState;
-    document.getElementById(this._id).innerHTML = document.componentReg[this._id].render();
+  handleAlert() {
+    alert(`Release number: ${this.state.version}`);
   }
 
   render() {
     return `
-      <div id=${this._id} class="app-item">
-        <div
-          onClick="document.componentReg[${this._id}].handleAlert(${this.state.version})"
-          style="display: flex; margin: 23px 0px"
-        >
-          <div class="app-item-apdex">${this.state.apdex}</div>
-          <div>${this.state.name}</div>
-        </div>
+      <div
+        class="app-item"
+        onClick="document.componentReg[${this._id}].handleAlert()"
+      >
+        <div class="app-item-apdex">${this.state.apdex}</div>
+        <div>${this.state.name}</div>
       </div>
     `;
   }

@@ -9,18 +9,20 @@ class Host extends Component {
     this.state = {
       host: props.host,
       apps: props.apps,
+      appItems: [],
     };
+    this.init();
   }
 
   init() {
-    return this.state.apps.map(item => (new AppItem(item)));
+    this.state.appItems = this.state.apps.map(item => (new AppItem(item)));
   }
 
-  render() {
+  render(layoutMode) {
     return `
-      <div class="host-container">
+      <div class="host-container ${layoutMode}">
       <strong>${this.state.host}</strong>
-        ${this.init().slice(0, 5).map(child => child.render()).join('')}
+        ${this.state.appItems.slice(0, 5).map(app => app.render()).join('')}
       </div>
    `;
   }

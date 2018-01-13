@@ -2,21 +2,25 @@ import dataAPI from './data/host-app-data.json';
 
 import Component from './components/Component';
 import Host from './components/Host/Host';
+import ToggleLayout from './components/ToggleLayout/ToggleLayout';
 
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       data: dataAPI,
       hosts: [],
+      toggle: null,
     };
+    this.init();
   }
 
   init() {
-    this.getHostsList();
-    return this.state.hosts.map(host => (new Host({ host, apps: this.getTopAppsByHost(host) })));
+    this.state.hosts = this.getHostsList()
+      .map(host => (new Host({ host, apps: this.getTopAppsByHost(host) })));
+    this.state.toggle = new ToggleLayout().render();
   }
 
   getHostsList() {
@@ -41,12 +45,17 @@ class App extends Component {
       .slice(0, 25);
   }
 
-  render() {
+  update(layoutChange) {
+    document.getElementById('0').outerHTML = document.componentReg[0].render(layoutChange);
+  }
+
+  render(layoutChange) {
     return `
-      <div class="app-container">
+      <div id="${this._id}" class="app-container">
         <h1>Apps by Host</h1>
-        <div class="app-host-list">
-          ${this.init().map(child => child.render()).join('')}
+          ${this.state.toggle}
+        <div class="app-host-list ${layoutChange === true ? 'column' : 'grid'}">
+          ${this.state.hosts.map(host => host.render(layoutChange === true ? 'column' : 'grid')).join('')}
         </div>
       </div>
    `;

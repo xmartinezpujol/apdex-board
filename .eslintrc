@@ -3,9 +3,12 @@
     "extends": "airbnb-base",
     "parserOptions": {
         "ecmaVersion": 6,
-        "sourceType": "module",
+        "sourceType": "module"
     },
     "rules": {
       "no-underscore-dangle": 0
+    },
+    "globals": {
+        "document": true
     }
 }

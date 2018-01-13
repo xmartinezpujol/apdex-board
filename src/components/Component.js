@@ -1,4 +1,4 @@
-document.componentReg = { };
+document.componentReg = [];
 document.nextId = 0;
 
 class Component {
