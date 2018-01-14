@@ -4,6 +4,10 @@
     margin: 15px;
 }
 
+.host-container strong {
+    line-height: 50px;
+}
+
 .host-container.column {
     max-width: 100%;
 }

@@ -22,7 +22,7 @@ class AppItem extends Component {
     return `
       <div
         class="app-item"
-        onClick="document.componentReg[${this._id}].handleAlert()"
+        onClick="document.componentReg[${this._id - document.currentState}].handleAlert()"
       >
         <div class="app-item-apdex">${this.state.apdex}</div>
         <div>${this.state.name}</div>

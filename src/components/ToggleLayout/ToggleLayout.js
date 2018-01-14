@@ -13,11 +13,12 @@ class ToggleLayout extends Component {
   handleToggle() {
     this.state.layoutColumn = !this.state.layoutColumn;
     document.componentReg[0].update(this.state.layoutColumn);
-    document.componentReg[this._id].update();
+    document.componentReg[this._id - document.currentState].update();
   }
 
   update() {
-    document.getElementById(this._id).outerHTML = document.componentReg[this._id].render();
+    document.getElementById(this._id).outerHTML =
+      document.componentReg[this._id - document.currentState].render();
   }
 
   render() {
@@ -27,7 +28,7 @@ class ToggleLayout extends Component {
           name="layout-mode"
           type="checkbox"
           ${this.state.layoutColumn === true ? 'checked' : ''}
-          onClick="document.componentReg[${this._id}].handleToggle()"
+          onClick="document.componentReg[${this._id - document.currentState}].handleToggle()"
         />
           <label name="layout-mode">
             ${this.state.layoutColumn === true ? 'Show as list' : 'Show as an awesome grid'}

@@ -21,8 +21,8 @@ class Host extends Component {
   render(layoutMode) {
     return `
       <div class="host-container ${layoutMode}">
-      <strong>${this.state.host}</strong>
-        ${this.state.appItems.slice(0, 5).map(app => app.render()).join('')}
+        <strong>${this.state.host}</strong>
+          ${this.state.appItems.slice(0, 5).map(app => app.render()).join('')}
       </div>
    `;
   }
