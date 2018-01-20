@@ -1,13 +1,38 @@
 .app-item {
     display: flex;
-    padding: 15px 0;
+    padding: 13px 0;
+}
+
+.app-item:first-of-type {
+    margin-top: 23px;
+}
+
+.app-item:last-of-type {
+    padding-bottom: 0;
+}
+
+.app-item p {
+    margin: 0;
+    color: #4A4A4A;
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 19px;
 }
 
 .app-item:hover {
-    background-color: red;
+    background-color: #FAFAFA;
     cursor: pointer;
+}
+
+.app-item:hover > p {
+    text-decoration: underline;
 }
 
 .app-item-apdex {
     margin-right: 10px;
+    color: #4A4A4A;
+    opacity: 0.62;
+    font-size: 13px;
+    font-family: "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+    line-height: 19px;
 }

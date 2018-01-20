@@ -13,6 +13,9 @@ const appData = {
     'e7bf58af-f0be.dallas.biz',
     'o9b251zg-g0ce.minnesota.biz',
   ],
+  user: {
+    email: 'averylongemailadress@companyname.com',
+  },
 };
 
 export default appData;

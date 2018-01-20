@@ -15,6 +15,7 @@ class App extends Component {
       data: dataAPI,
       hosts: [],
       toggle: null,
+      userData: appData.user,
     };
     this.addDOMEvents();
     this.init();
@@ -75,14 +76,17 @@ class App extends Component {
   }
 
   update(layoutChange) {
-    document.getElementById('0').outerHTML = document.componentReg[0].render(layoutChange);
+    document.getElementById('app-main').outerHTML = document.componentReg[0].render(layoutChange);
   }
 
   render(layoutChange) {
     return `
-      <div id="${this._id}" class="app-container">
-        <h1>Apps by Host</h1>
+      <div id="app-main" class="app-container">
+        <div class="top-bar">
+          <h1>Apps by Host</h1>             
+          <span class="user-email">for user ${this.state.userData.email}</span>
           ${this.state.toggle}
+        </div>
         <div class="app-host-list ${layoutChange === true ? 'column' : 'grid'}">
           ${this.state.hosts.map(host => host.render(layoutChange === true ? 'column' : 'grid')).join('')}
         </div>

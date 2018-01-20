@@ -1,17 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 22px;
+    color: #000;
+    background-color: #F5F5F5;
+}
+
 .app-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 840px;
+    margin: 35px auto;
     font-family: sans-serif;
 }
 
 .app-container h1 {
-    margin-left: 15px;
+    min-width: 240px;
+    color: #000;
+    font-size: 35px;
+    font-family: "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+    line-height: 43px;
+    margin: 0;
+}
+
+.top-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.user-email {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .app-host-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 15px 30px;
 }
 
 .app-host-list.column {
@@ -21,3 +52,20 @@
 .app-host-list.grid {
     flex-direction: row;
 }
+
+@media only screen and (max-width: 767px) {
+    .app-container h1 {
+        width: 100%;
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    .top-bar {
+        flex-direction: column;
+    }
+    .user-email {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+

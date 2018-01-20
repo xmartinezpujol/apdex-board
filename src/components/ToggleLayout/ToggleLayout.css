@@ -1,3 +1,67 @@
 .toggle-layout {
-    margin-left: 15px;
+    position: relative;
+    margin-left: 30px;
+    display: flex;
+    min-width: 98px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 14px;
 }
+
+.toggle-layout.active {
+    min-width: 188px;
+}
+
+/* Hide the browser's default checkbox */
+.toggle-layout  input[type="checkbox"] {
+    position: relative;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #00BE33;
+    border-radius: 4px;
+    border: 3px solid white;
+}
+
+.checkmark:after {
+    position: relative;
+    background-color: red;
+    height: 25px;
+    width: 25px;
+}
+
+.toggle-layout .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.toggle-layout:hover input[type="checkbox"] ~ .checkmark {
+    background-color: #CCC;
+}
+
+.toggle-layout input[type="checkbox"]:checked ~ .checkmark {
+    background-color: #00BE33;
+}
+
+.toggle-layout input[type="checkbox"]:not(:checked) ~ .checkmark {
+    background-color: #FFF;
+}
+

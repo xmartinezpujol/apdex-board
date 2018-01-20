@@ -1,11 +1,14 @@
 .host-container {
-    background-color: green;
-    padding: 20px;
-    margin: 15px;
+    background-color: #FFF;
+    padding: 30px;
+    margin: 15px 0px;
 }
 
 .host-container strong {
-    line-height: 50px;
+    color: #000;
+    font-size: 16px;
+    font-family: "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+    line-height: 19px;
 }
 
 .host-container.column {
@@ -13,10 +16,10 @@
 }
 
 .host-container.grid {
-    width: calc(50% - 80px);
+    width: 375px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
     .host-container.grid {
         width: 100%;
     }
