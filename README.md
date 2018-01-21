@@ -3,8 +3,6 @@
 ### Install
 Node/NPM required to install dependencies.
 
-![ReactJS App - Simple REST API](/server/data/preview.jpg?raw=true "ReactJS App - Simple REST API")
-
 Clone rep
 ``` shell
 git clone https://github.com/xmartinezpujol/apdex-board.git
