@@ -16,7 +16,7 @@ body {
     font-family: sans-serif;
 }
 
-.app-container h1 {
+.app-container h1.page-title {
     min-width: 240px;
     color: #000;
     font-size: 35px;
@@ -33,6 +33,7 @@ body {
 }
 
 .user-email {
+    flex: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -45,7 +46,7 @@ body {
     padding: 15px 30px;
 }
 
-.app-host-list.column {
+.app-host-list.list {
     flex-direction: column;
 }
 

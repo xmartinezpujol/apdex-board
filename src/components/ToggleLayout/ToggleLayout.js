@@ -25,17 +25,19 @@ class ToggleLayout extends Component {
     const toggleWidth = this.state.layoutColumn ? 'active' : '';
 
     return `
-      <div id="toggle-${this._id}" class="toggle-layout ${toggleWidth}">
+      <div
+          id="toggle-${this._id}"
+          class="toggle-layout ${toggleWidth}"
+          onClick="document.componentReg[${this._id - document.currentState}].handleToggle()"
+        >
         <input
           name="layout-mode"
           type="checkbox"
           ${this.state.layoutColumn === true ? 'checked' : ''}
-          onClick="document.componentReg[${this._id - document.currentState}].handleToggle()"
         />
-        <span class="checkmark"></span>
-          <label name="layout-mode">
-            ${this.state.layoutColumn === true ? 'Show as an awesome grid' : 'Show as list'}
-          </label>
+        <label name="layout-mode ${toggleWidth}">
+          ${this.state.layoutColumn === true ? 'Show as an awesome grid' : 'Show as list'}
+        </label>
       </div>
    `;
   }

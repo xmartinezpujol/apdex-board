@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppItem renders correctly 1`] = `
+"
+      <div
+        class=\\"app-item\\"
+        onClick=\\"document.componentReg[0].handleAlert()\\"
+      >
+        <div class=\\"app-item-apdex\\">100</div>
+        <p>New Test App - Lorem - Ipsum, and Ipsums</p>
+      </div>
+    "
+`;

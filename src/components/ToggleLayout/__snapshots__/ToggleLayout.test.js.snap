@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleLayout renders correctly initial state 1`] = `
+"
+      <div
+          id=\\"toggle-0\\"
+          class=\\"toggle-layout \\"
+          onClick=\\"document.componentReg[0].handleToggle()\\"
+        >
+        <input
+          name=\\"layout-mode\\"
+          type=\\"checkbox\\"
+          
+        />
+        <label name=\\"layout-mode \\">
+          Show as list
+        </label>
+      </div>
+   "
+`;
+
+exports[`ToggleLayout renders correctly the checked state 1`] = `
+"
+      <div
+          id=\\"toggle-0\\"
+          class=\\"toggle-layout active\\"
+          onClick=\\"document.componentReg[0].handleToggle()\\"
+        >
+        <input
+          name=\\"layout-mode\\"
+          type=\\"checkbox\\"
+          checked
+        />
+        <label name=\\"layout-mode active\\">
+          Show as an awesome grid
+        </label>
+      </div>
+   "
+`;

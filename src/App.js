@@ -5,6 +5,9 @@ import Host from './components/Host/Host';
 import ToggleLayout from './components/ToggleLayout/ToggleLayout';
 
 import appData from './data/MockDataApp';
+import userData from './data/MockUser';
+
+import appConfig from './config/Constants';
 
 import './App.css';
 
@@ -15,7 +18,7 @@ class App extends Component {
       data: dataAPI,
       hosts: [],
       toggle: null,
-      userData: appData.user,
+      userData,
     };
     this.addDOMEvents();
     this.init();
@@ -40,7 +43,7 @@ class App extends Component {
   init() {
     this.destroy();
     this.state.hosts = this.getHostsList()
-      .map(host => (new Host({ host, apps: this.getTopAppsByHost(host) })));
+      .map(host => (new Host({ name: host, apps: this.getTopAppsByHost(host) })));
     this.state.toggle = new ToggleLayout().render();
   }
 
@@ -63,12 +66,12 @@ class App extends Component {
     return this.state.data
       .filter(app => (app.host.includes(hostname)))
       .sort((a, b) => (b.apdex - a.apdex))
-      .slice(0, 25);
+      .slice(0, appConfig.MAX_APPS_APDEX_DESC);
   }
 
   addAppToHosts(app) {
     this.removeAppToHosts(app.name);
-    this.state.data.push(app);
+    this.state.data = [...this.state.data, app];
   }
 
   removeAppToHosts(appName) {
@@ -83,12 +86,12 @@ class App extends Component {
     return `
       <div id="app-main" class="app-container">
         <div class="top-bar">
-          <h1>Apps by Host</h1>             
+          <h1 class="page-title">Apps by Host</h1>             
           <span class="user-email">for user ${this.state.userData.email}</span>
           ${this.state.toggle}
         </div>
-        <div class="app-host-list ${layoutChange === true ? 'column' : 'grid'}">
-          ${this.state.hosts.map(host => host.render(layoutChange === true ? 'column' : 'grid')).join('')}
+        <div class="app-host-list ${layoutChange === true ? 'list' : 'grid'}">
+          ${this.state.hosts.map(host => host.render(layoutChange === true ? 'list' : 'grid')).join('')}
         </div>
       </div>
    `;

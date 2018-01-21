@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack -p",
-    "test": "jest",
+    "test": "jest --coverage",
     "watch": "jest --watch *.js"
   },
   "repository": {
@@ -17,6 +17,11 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/xmartinezpujol/apdex-board/issues"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css)$": "identity-obj-proxy"
+    }
   },
   "homepage": "https://github.com/xmartinezpujol/apdex-board#readme",
   "devDependencies": {
@@ -29,6 +34,7 @@
     "eslint": "^4.13.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.0",
     "style-loader": "^0.19.1",
     "webpack": "^3.10.0",

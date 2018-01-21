@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Host renders correctly 1`] = `
+"
+      <div class=\\"host-container grid\\">
+        <strong>7e6272f7-098e.dakota.biz</strong>
+          
+      <div
+        class=\\"app-item\\"
+        onClick=\\"document.componentReg[1].handleAlert()\\"
+      >
+        <div class=\\"app-item-apdex\\">100</div>
+        <p>Awesome 1</p>
+      </div>
+    
+      <div
+        class=\\"app-item\\"
+        onClick=\\"document.componentReg[2].handleAlert()\\"
+      >
+        <div class=\\"app-item-apdex\\">99</div>
+        <p>Awesome 2</p>
+      </div>
+    
+      <div
+        class=\\"app-item\\"
+        onClick=\\"document.componentReg[3].handleAlert()\\"
+      >
+        <div class=\\"app-item-apdex\\">98</div>
+        <p>Awesome 3</p>
+      </div>
+    
+      <div
+        class=\\"app-item\\"
+        onClick=\\"document.componentReg[4].handleAlert()\\"
+      >
+        <div class=\\"app-item-apdex\\">96</div>
+        <p>Awesome 4</p>
+      </div>
+    
+      <div
+        class=\\"app-item\\"
+        onClick=\\"document.componentReg[5].handleAlert()\\"
+      >
+        <div class=\\"app-item-apdex\\">95</div>
+        <p>Awesome 5</p>
+      </div>
+    
+      </div>
+   "
+`;

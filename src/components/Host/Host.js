@@ -1,13 +1,15 @@
 import Component from './../Component';
 import AppItem from './../AppItem/AppItem';
 
+import appConfig from './../../config/Constants';
+
 import './Host.css';
 
 class Host extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      host: props.host,
+      name: props.name,
       apps: props.apps,
       appItems: [],
     };
@@ -18,11 +20,11 @@ class Host extends Component {
     this.state.appItems = this.state.apps.map(item => (new AppItem(item)));
   }
 
-  render(layoutMode) {
+  render(layoutMode = 'grid') {
     return `
       <div class="host-container ${layoutMode}">
-        <strong>${this.state.host}</strong>
-          ${this.state.appItems.slice(0, 5).map(app => app.render()).join('')}
+        <strong>${this.state.name}</strong>
+          ${this.state.appItems.slice(0, appConfig.MAX_APPS_BY_HOST).map(app => app.render()).join('')}
       </div>
    `;
   }
