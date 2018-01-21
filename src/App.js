@@ -86,7 +86,7 @@ class App extends Component {
     return `
       <div id="app-main" class="app-container">
         <div class="top-bar">
-          <h1 class="page-title">Apps by Host</h1>             
+          <h1 class="page-title">Apps by Host</h1>
           <span class="user-email">for user ${this.state.userData.email}</span>
           ${this.state.toggle}
         </div>
